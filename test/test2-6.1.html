@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test2-6.1</title>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+  <div id="example"></div>
+
+  <script type="text/babel">
+  //JSX允许html与JavaScript混写。标签（以<开头）用html规则解析。代码块（以{开头）用JavaScript规则解析
+  var names = ['alice','emily','kate','dan'];
+  ReactDOM.render(
+    <div>
+    {
+      names.map(function (name,index) {
+        return <div key={index}>hello,{name}!</div>
+      })
+    }
+    </div>,
+    document.getElementById('example')
+  );
+  </script>
+</body>
+</html>

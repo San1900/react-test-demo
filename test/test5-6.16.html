@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+<title>test5-6.16</title>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+	var NoteList = React.createClass({
+		render: function(){
+			return (
+				<ol>
+				{
+					React.Children.map(this.props.children,function (child) {
+						return <li>{child}</li>;
+					})
+				}
+				</ol>
+			);
+		}
+	});
+
+	ReactDOM.render(
+		<NoteList>
+			<span>123</span>
+			<span>456</span>
+		</NoteList>,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>

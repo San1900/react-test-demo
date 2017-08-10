@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test4-6.6</title>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="test"></div>
+	<script type="text/babel">
+	//所有组件类都必须有自己的render方法用于输出。组件可以加入任意属性，组件的属性可以在组件类的this.props对象上获取，比如name属性就可以通过this.props.name读取。添加属性时class属性需要写成className,for属性需要写成htmlFor，因为class和for是JavaScript的保留字。组件类的第一个字母必须大写，每个组件类只能包含一个顶层标签，否者会报错。
+	var HelloMsg = React.createClass({
+		render:function(){
+			return <h1>hello {this.props.name}</h1>;
+		}
+	});
+	ReactDOM.render(
+		<HelloMsg name = "123" />,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>

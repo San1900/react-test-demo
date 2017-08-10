@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test3-6.2</title>
+<script src="../build/react.js"></script>
+<script src="../build/react-dom.js"></script>
+<script src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<script type="text/babel">
+	//允许插入变量。若变量是一个数组，则会展开数组中的所有成员
+	var arr = [
+	//http://www.tuicool.com/articles/UVvaMz
+	//数组中的元素必须提供唯一的key属性，例：{props.users.map(u => <div key={u.id}>{u.id}:{u.name}</div>)}
+	//当组件的属性发生改变时，render会被重新调用，组件会被重新渲染。为数组中的元素传一个唯一的key（比如用户id），React比较更新前后元素的key值，如果相同则更新，如果不同则销毁之前的，重新创建一个新的。
+	//其他元素不需要传key，React会分辨更新元素的对应关系。但是也可以通过传key来实现组件的销毁与重建(复杂的有状态组件)。
+		<h1 key="1">hello</h1>,
+		<h2 key="2">react</h2>,
+	];
+	ReactDOM.render(
+		<div>{arr}</div>,
+		document.getElementById('example')
+	);
+	</script>
+</body>
+</html>
